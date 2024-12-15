@@ -17,7 +17,7 @@ version: '3.9'
 
 services:
   cron:
-    image: betterweb/crontab:latest
+    image: betterweb/cron:latest
     command: "curl https://example.com/cron.txt"
     environment:
       - CRON_SCHEDULE="*/5 * * * *" # Run every 5 minutes
@@ -27,7 +27,7 @@ services:
 
 Docker run:  
 ```sh
-sudo docker run -e "CRON_SCHEDULE=* * * * *" -e "CRON_APTS=curl" -e "CRON_IMMEDIATE=false" betterweb/crontab:latest "curl https://example.com/cron.txt"
+sudo docker run -e "CRON_SCHEDULE=* * * * *" -e "CRON_APTS=curl" -e "CRON_IMMEDIATE=false" betterweb/cron:latest "curl https://example.com/cron.txt"
 ```
 
 ## Security Features
